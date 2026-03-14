@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Show flower</title>
+</head>
+<body>
+<p th:text="${'name: ' + flower.name + ', latin name: ' + flower.latinName + ', type: ' + flower.type + ', room: ' + flower.room + ', health status: ' + flower.healthStatus}">VALUE</p>
+<p th:text="${'Id record' + flower.getId()}">VALUE</p>
+
+<a th:href="@{/flowers/{id}/update(id=${flower.id})}"
+   sec:authorize="hasRole('ADMIN')">Edit</a>
+</br>
+<form th:action="@{/flowers/delete/{id}(id=${flower.id})}" method="post"
+      sec:authorize="hasRole('ADMIN')">
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>

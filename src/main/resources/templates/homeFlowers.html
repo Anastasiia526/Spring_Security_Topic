@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Flowers</title>
+</head>
+<body>
+<div th:each="flower : ${flowers}">
+    <a th:href="@{/flowers/{id}(id=${flower.id})}"
+       th:text="${flower.name + ', ' + flower.latinName+ ', ' + flower.type + ', ' + flower.room + ', ' + flower.healthStatus}">flower</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/flowers/new">Create new flower</a>
+
+</body>
+</html>
