@@ -2,7 +2,7 @@ package org.example.homework.controllers;
 
 import jakarta.validation.Valid;
 import org.example.homework.dto.FlowerDto;
-import org.example.homework.services.FlowerDtoServiceImpl;
+import org.example.homework.services.FlowerServiceImpl;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/flowers")
 public class FlowerControllers {
-    private final FlowerDtoServiceImpl flowerDtoService;
+    private final FlowerServiceImpl flowerDtoService;
 
-    public FlowerControllers(FlowerDtoServiceImpl flowerDtoService) {
+    public FlowerControllers(FlowerServiceImpl flowerDtoService) {
         this.flowerDtoService = flowerDtoService;
     }
 

@@ -3,7 +3,6 @@ package org.example.homework.services.interfaces;
 import org.example.homework.dto.FlowerDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface FlowerServiceInterface {
 

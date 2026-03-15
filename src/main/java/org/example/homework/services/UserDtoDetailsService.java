@@ -1,6 +1,6 @@
 package org.example.homework.services;
 
-import org.example.homework.dto.UserDto;
+import org.example.homework.models.UserOfApp;
 import org.example.homework.repositories.UserRepository;
 import org.example.homework.security.UserDtoDetails;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,7 +21,7 @@ public class UserDtoDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        Optional<UserDto> user = userRepository.findByUsername(username);
+        Optional<UserOfApp> user = userRepository.findByUsername(username);
         if (user.isEmpty()) {
            throw new UsernameNotFoundException("User" + username + " not found");
         }

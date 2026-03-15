@@ -1,6 +1,6 @@
 package org.example.homework.services;
 
-import org.example.homework.dto.UserDto;
+import org.example.homework.models.UserOfApp;
 import org.example.homework.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class RegistrationService {
     }
 
     @Transactional
-    public void register(UserDto user) {
+    public void register(UserOfApp user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("ROLE_USER");
         userRepository.save(user);

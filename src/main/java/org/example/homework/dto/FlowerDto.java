@@ -1,23 +1,20 @@
 package org.example.homework.dto;
 
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "homeflowers")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class FlowerDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "health_status")
     private String healthStatus;
 
-    @Column(name="latin_name")
     private String latinName;
 
     private String name;

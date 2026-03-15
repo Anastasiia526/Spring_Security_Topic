@@ -1,7 +1,7 @@
 package org.example.homework.controllers;
 
 import jakarta.validation.Valid;
-import org.example.homework.dto.UserDto;
+import org.example.homework.models.UserOfApp;
 import org.example.homework.services.RegistrationService;
 import org.example.homework.validations.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +32,12 @@ public class RegistrationControllers {
     }
 
     @GetMapping("/registration")
-    public String registrationPage(@ModelAttribute("user") UserDto user) {
+    public String registrationPage(@ModelAttribute("user") UserOfApp user) {
         return "auth/registration";
     }
 
     @PostMapping("/registration")
-    public String performRegistration(@ModelAttribute("user") @Valid UserDto user,
+    public String performRegistration(@ModelAttribute("user") @Valid UserOfApp user,
                                       BindingResult bindingResult) {
 
         userValidator.validate(user, bindingResult);

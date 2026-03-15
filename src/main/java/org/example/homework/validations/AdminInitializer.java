@@ -1,7 +1,7 @@
 package org.example.homework.validations;
 
 import jakarta.annotation.PostConstruct;
-import org.example.homework.dto.UserDto;
+import org.example.homework.models.UserOfApp;
 import org.example.homework.repositories.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public AdminInitializer(UserRepository userRepository, BCryptPasswordEncoder bCr
 @PostConstruct
 public void createAdmin(){
     if(userRepository.findByUsername("admin").isEmpty()){
-        UserDto admin = new UserDto();
+        UserOfApp admin = new UserOfApp();
         admin.setUsername("admin");
         admin.setSurname("Kalitina");
         admin.setRole("ROLE_ADMIN");

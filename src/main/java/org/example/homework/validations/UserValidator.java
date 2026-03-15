@@ -1,7 +1,7 @@
 package org.example.homework.validations;
 
 
-import org.example.homework.dto.UserDto;
+import org.example.homework.models.UserOfApp;
 import org.example.homework.services.UserDtoDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
@@ -19,12 +19,12 @@ public class UserValidator implements Validator {
 
     @Override
    public boolean supports(Class<?> clazz) {
-        return UserDto.class.equals(clazz);
+        return UserOfApp.class.equals(clazz);
    }
 
 @Override
    public void validate(Object target, Errors errors) {
-        UserDto user = (UserDto) target;
+        UserOfApp user = (UserOfApp) target;
 
         try{
             userDtoDetailsService.loadUserByUsername(user.getUsername());

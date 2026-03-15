@@ -1,6 +1,5 @@
 package org.example.homework.security;
 
-import org.example.homework.dto.UserDto;
 import org.example.homework.models.UserOfApp;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,9 +11,9 @@ import java.util.Collections;
 
 public class UserDtoDetails implements UserDetails {
 
-private final UserDto user;
+private final UserOfApp user;
 
-public UserDtoDetails(UserDto user) {
+public UserDtoDetails(UserOfApp user) {
     this.user = user;
 }
 
